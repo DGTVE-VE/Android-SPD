@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SPD</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="bienvenida"> ¡ BIENVENIDO ! </string>
+    <string name="texto_bienvenida">
+        Con el objetivo de ofrecer mayores condiciones de equidad y de igualdad de oportunidades
+        para todos los sustentantes en los procesos de evaluación del Servicio Profesional Docente,
+        este sitio ofrece diversos recursos de apoyo para el autoestudio y la formación.\n\n
+
+        Los docentes, técnicos docentes, directivos, personal con funciones de supervisión y asesoría
+        técnico pedagógica, dispondrán de acceso libre y permanente a un simulador de exámenes, a
+        Guías de estudio conforme a cada perfil y a un repositorio de materiales bibliográficos en
+        formato electrónico, entre otros instrumentos.\n\n
+
+        A medida que avancen los procesos de evaluación, la oferta de recursos se ampliará y
+        diversificará a fin de cubrir las necesidades del personal docente tanto de Educación Básica
+        como de Educación Media Superior conforme a los Perfiles, parámetros e indicadores
+        establecidos para cada función.\n\n
+
+        La Secretaría de Educación Pública confía que este material aporte elementos valiosos para
+        mejorar su desempeño en las evaluaciones docentes y en la práctica educativa cotidiana.
+    </string>
+    <string name="title_activity_menu_ingreso">MenuIngreso</string>
+</resources>
