@@ -1,0 +1,141 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="mx.gob.televisioneducativa.spd.MenuPromocionBasicaFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/header" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:src="@color/red" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fondo_direccion_basica"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/btn_titulo_direccion_basica"
+                    android:text="Direccion"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/direccion_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_direccion_basica"
+                    android:text="Dirección" />
+
+                <Button
+                    android:id="@+id/subdireccion_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_direccion_basica"
+                    android:text="Subdirección" />
+
+                <Button
+                    android:id="@+id/coordinador_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_direccion_basica"
+                    android:text="Coordinador de actividades" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fondo_supervision_basica"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/btn_titulo_supervision_basica"
+                    android:text="Supervisión"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/supervision_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_supervision_basica"
+                    android:text="Supervisión" />
+
+                <Button
+                    android:id="@+id/jefe_sector_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_supervision_basica"
+                    android:text="Jefe de sector" />
+
+                <Button
+                    android:id="@+id/jefe_ensenanza_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_supervision_basica"
+                    android:text="Jefe de Ensenanza" />
+
+                <Button
+                    android:id="@+id/inspector_basica"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@color/btn_supervision_basica"
+                    android:text="Inspector General" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/fondo_atp_basica"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/btn_titulo_atp"
+                    android:text="Asesoría Técnica Pedagógica"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/atp_basica"
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/btn_atp"
+                    android:text="Asesoría Técnica Pedagógica"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

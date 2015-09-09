@@ -17,12 +17,48 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MenuIngreso"
+            android:name=".MenuNivel"
             android:label="@string/title_activity_menu_ingreso"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="mx.gob.televisioneducativa.spd.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Infografia"
+            android:label="@string/title_activity_ingreso_basica" >
+        </activity>
+        <activity
+            android:name=".MenuPromocionBasica"
+            android:label="@string/title_activity_menu_promocion_basica" >
+            android:parentActivityName=".MenuNivel" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mx.gob.televisioneducativa.spd.MenuNivel" />
+        </activity>
+        <activity
+            android:name=".MenuPromocionMedia"
+            android:label="@string/title_activity_menu_promocion_media"
+            android:parentActivityName=".MenuNivel" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mx.gob.televisioneducativa.spd.MenuNivel" />
+        </activity>
+        <activity
+            android:name=".Estrategias_estudio"
+            android:label="@string/title_activity_estrategias_estudio" >
+        </activity>
+        <activity
+            android:name=".MenuBar"
+            android:label="@string/title_activity_menu_bar" >
+        </activity>
+        <activity
+            android:name=".Faq"
+            android:label="@string/title_activity_faq" >
+        </activity>
+        <activity
+            android:name=".Contacto"
+            android:label="@string/title_activity_contacto" >
         </activity>
     </application>
 

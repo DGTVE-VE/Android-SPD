@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 
 /**
@@ -31,11 +30,22 @@ public class MainActivityFragment extends Fragment {
             }
         });
 
-        Button ingresoButton = (Button) root.findViewById(R.id.btn_ingreso);
-        ingresoButton.setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.btn_ingreso).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), MenuIngreso.class));
+                startActivity(
+                        new Intent(getActivity(),
+                                MenuNivel.class).
+                                putExtra("proceso", "Ingreso"));
+            }
+        });
+        root.findViewById(R.id.btn_promocion).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(
+                        new Intent(getActivity(),
+                                MenuNivel.class).
+                                putExtra("proceso", "Promoción"));
             }
         });
         return root;

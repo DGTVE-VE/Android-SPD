@@ -4,6 +4,22 @@
     <color name="red">#ff0000</color>
     <color name="pink">#FF69B4</color>
     <color name="orange">#ffda69</color>
+    <color name="black">#000000</color>
+    <color name="green">#66CD00</color>
+
+    <color name="fondo_direccion_basica">#ffffff</color>
+    <color name="fondo_supervision_basica">#ffffff</color>
+    <color name="fondo_atp_basica">#ffffff</color>
+    <color name="btn_titulo_direccion_basica">#ff9999</color>
+    <color name="btn_direccion_basica">#ff99cc</color>
+    <color name="btn_titulo_supervision_basica">#ff9999</color>
+    <color name="btn_supervision_basica">#ff99cc</color>
+    <color name="btn_titulo_atp">#ff9999</color>
+    <color name="btn_atp">#ff99cc</color>
+
+    <color name="btn_media">#ff9933</color>
+
+
 
 
 

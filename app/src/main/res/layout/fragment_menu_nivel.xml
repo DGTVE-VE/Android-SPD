@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.gob.televisioneducativa.spd.MenuNivelFragment">
+    <ImageView
+        android:src="@drawable/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+    <ImageView
+        android:src="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"/>
+    <LinearLayout
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <Button
+        android:id="@+id/btn_ingreso_basica"
+        android:text="Educación Básica"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:textColor="@color/white"
+        android:background="@color/pink"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        />
+
+    <Button
+        android:id="@+id/btn_ingreso_media"
+        android:text="Educación Media Superior"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:textSize="@dimen/abc_text_size_large_material"
+        android:textColor="@color/white"
+        android:background="@color/orange"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"/>
+    </LinearLayout>
+</LinearLayout>

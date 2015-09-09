@@ -1,21 +1,27 @@
 package mx.gob.televisioneducativa.spd;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-public class MainActivity extends MenuBar {
+public class MenuNivel extends MenuBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        setTitle("Evaluación Docente");
+        setContentView(R.layout.activity_menu_nivel);
+        String proceso = "";
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("proceso")){
+            proceso = intent.getStringExtra("proceso");
+        }
+        setTitle(proceso);
     }
 
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        getMenuInflater().inflate(R.menu.menu_menu_ingreso, menu);
 //        return true;
 //    }
 //
@@ -27,8 +33,8 @@ public class MainActivity extends MenuBar {
 //        int id = item.getItemId();
 //
 //        //noinspection SimplifiableIfStatement
-//        if (id == R.id.menu_estrategias) {
-//            startActivity(new Intent(this, Estrategias_estudio.class));
+//        if (id == R.id.action_settings) {
+//            return true;
 //        }
 //
 //        return super.onOptionsItemSelected(item);

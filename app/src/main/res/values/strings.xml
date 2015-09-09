@@ -22,4 +22,11 @@
         mejorar su desempeño en las evaluaciones docentes y en la práctica educativa cotidiana.
     </string>
     <string name="title_activity_menu_ingreso">MenuIngreso</string>
+    <string name="title_activity_ingreso_basica">IngresoBasica</string>
+    <string name="title_activity_menu_promocion_basica">MenuPromocionBasica</string>
+    <string name="title_activity_menu_promocion_media">MenuPromocionMedia</string>
+    <string name="title_activity_estrategias_estudio">Estrategias de Estudio</string>
+    <string name="title_activity_menu_bar">MenuBar</string>
+    <string name="title_activity_faq">Preguntas Frecuentes</string>
+    <string name="title_activity_contacto">Contacto</string>
 </resources>
