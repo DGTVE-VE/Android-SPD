@@ -1,11 +1,9 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     android:orientation="vertical"
-    tools:context="mx.gob.televisioneducativa.spd.InfografiaFragment">
+    tools:context="mx.gob.televisioneducativa.spd.Perfiles_guiasFragment">
     <ImageView
         android:src="@drawable/header"
         android:layout_width="match_parent"
@@ -19,25 +17,17 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"/>
     <TextView
-        android:id="@+id/titulo"
+        android:text="Perfiles, Guias y Bibliografía"
         android:textSize="@dimen/abc_text_size_title_material"
         android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         />
-
-    <Button
-        android:id="@+id/boton_perfiles"
-        android:text = "Perfiles, Guias y Bibliografia"
+    <ListView
+        android:id="@+id/listView_perfiles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"/>
-    <WebView
-        android:id="@+id/infografia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"/>
+        />
 
 </LinearLayout>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -31,6 +32,15 @@ public class InfografiaFragment extends Fragment {
         if (intent != null && intent.hasExtra("infografia")){
             infografia = intent.getStringExtra("infografia");
         }
+
+        Button boton = (Button) root.findViewById(R.id.boton_perfiles);
+        boton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), Perfiles_guias.class));
+            }
+        });
 
         TextView tituloView = (TextView)root.findViewById(R.id.titulo);
         tituloView.setText(titulo);

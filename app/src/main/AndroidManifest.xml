@@ -60,6 +60,14 @@
             android:name=".Contacto"
             android:label="@string/title_activity_contacto" >
         </activity>
+        <activity
+            android:name=".Perfiles_guias"
+            android:label="@string/title_activity_perfiles_guias"
+            android:parentActivityName=".Infografia" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="mx.gob.televisioneducativa.spd.Infografia" />
+        </activity>
     </application>
 
 </manifest>

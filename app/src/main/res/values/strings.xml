@@ -29,4 +29,5 @@
     <string name="title_activity_menu_bar">MenuBar</string>
     <string name="title_activity_faq">Preguntas Frecuentes</string>
     <string name="title_activity_contacto">Contacto</string>
+    <string name="title_activity_perfiles_guias">Perfiles_guias</string>
 </resources>
