@@ -26,6 +26,7 @@ public class InfografiaFragment extends Fragment {
         String titulo = "";
         String infografia = "";
         Intent intent = getActivity().getIntent();
+
         if (intent != null && intent.hasExtra("titulo")){
             titulo = intent.getStringExtra("titulo");
         }
