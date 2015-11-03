@@ -1,6 +1,7 @@
 package mx.gob.televisioneducativa.spd;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import mx.gob.televisioneducativa.spd.entities.Guia;
+import mx.gob.televisioneducativa.spd.entities.GuiaAdapter;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -25,8 +27,12 @@ import mx.gob.televisioneducativa.spd.entities.Guia;
 public class Perfiles_guiasFragment extends Fragment {
 
 
-    //ArrayAdapter<Guia> guidesAdapter;
-    ArrayAdapter<String> guidesAdapter;
+    ArrayAdapter<Guia> g_adapter;
+
+    Intent intent;
+
+
+
 
     public Perfiles_guiasFragment() {
     }
@@ -34,7 +40,10 @@ public class Perfiles_guiasFragment extends Fragment {
     private ProgressDialog pDialog;
 
     // URL to get contacts JSON
-    private static String url = "http://189.206.254.89/spd/Guias-SPD/api/guias.php?proceso=ingreso&funcion=DOCENTE&nivel=BASICA";
+    //private static String url = "http://189.206.254.89/spd/Guias-SPD/api/guias.php?proceso=ingreso&funcion=DOCENTE&nivel=BASICA";
+
+    //private static String url = "http://189.206.254.89/spd/Guias-SPD/api/guias.php?proceso="proceso"&funcion"funcion"=&nivel="nivel"";
+
 
     // JSON Node names
     private static final String TAG_GUIAS = "Guias";
@@ -46,51 +55,41 @@ public class Perfiles_guiasFragment extends Fragment {
     JSONArray guides = null;
 
     // Hashmap for ListView
-    ArrayList<Guia> guidesList;
-    ArrayList<String> guiasLista;
+    ArrayList<Guia> guidesList ;
+
+    String proceso = "";
+    String funcion = "";
+    String nivel = "";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        guiasLista = new ArrayList<>();
         guidesList = new ArrayList<>();
-        guidesAdapter = new ArrayAdapter<String>(
-                getActivity(), // the current context (this activity)
-                R.layout.list_item_perfiles, // the name of layout ID
-                R.id.list_item_perfiles_textview,
-                guiasLista);
         View rootView = inflater.inflate(R.layout.fragment_perfiles_guias, container, false);
+
+
+
+        Intent intent = getActivity().getIntent();
+
+        funcion = intent.getStringExtra("funcion");
+        proceso = intent.getStringExtra("proceso");
+        nivel = intent.getStringExtra("nivel");
+
         ListView listaGuias = (ListView)rootView.findViewById(R.id.listView_perfiles);
-        listaGuias.setAdapter(guidesAdapter);
-        //ListView listView = (ListView) rootView.findViewById(R.id.listView_perfiles);
+
+
+        //instantiate our GuiaAdapter class
+        g_adapter = new GuiaAdapter(getActivity(),R.layout.list_item_perfiles,guidesList);
+        //setListAdapter(g_adapter);
+        listaGuias.setAdapter(g_adapter);
         new GetGuides().execute();
         return rootView;
-        //return null;
-/* este bloque funciona para un arreglo estatico(Lista de nombres 'data')
-        //create the dato for the listView
-        String[] data = {
-                "Luis",
-                "Sonia",
-                "Rober",
-                "Nancy",
-                "Isra",
-                "Bio"
-        };
-        List<String> nombres = new ArrayList<>(Arrays.asList(data));
-        namesAdapter = new ArrayAdapter<String>(
-                getActivity(), // the current context (this activity)
-                R.layout.list_item_perfiles, // the name of layout ID
-                R.id.list_item_perfiles_textview,
-                nombres);
-        View rootView = inflater.inflate(R.layout.fragment_perfiles_guias,container,false);
-        //get a reference to the listview, and attach this adapter to it.
-        ListView listView = (ListView)rootView.findViewById(R.id.listView_perfiles);
-        listView.setAdapter(namesAdapter);
-
-        return rootView;*/
 
     }
+
+
 
     private class GetGuides extends AsyncTask<Void, Void, Void> {
 
@@ -109,6 +108,11 @@ public class Perfiles_guiasFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... arg0) {
+
+            String url = "http://189.206.254.89/spd/Guias-SPD/api/guias.php?proceso="+proceso+"&funcion="+funcion+"&nivel="+nivel+"";
+
+            Log.d("URL","url:"+url);
+
             //Creating service handler class instance
             serviceHandler sh = new serviceHandler();
 
@@ -121,8 +125,6 @@ public class Perfiles_guiasFragment extends Fragment {
                     guides = new JSONArray(jsonStr);
                     Log.d("JSONObject","->" + guides);
 
-                    //getting JSON Array node
-//                    guides = jsonObj.getJSONArray(TAG_GUIAS);
 
                     //looping through All guides
                     for (int i = 0; i < guides.length(); i++) {
@@ -132,11 +134,9 @@ public class Perfiles_guiasFragment extends Fragment {
                                              g.getString(TAG_URLPERFIL)
                                 );
                         guidesList.add(guia);
-                        //Log.d(TAG, "Guia -> " + guia.getGuiaEstudio());
 
-                        String nombreGuia = new String(g.getString(TAG_GUIAESTUDIO));
-                        guiasLista.add(nombreGuia);
-
+                       /* String nombreGuia = new String(g.getString(TAG_GUIAESTUDIO));
+                        guiasLista.add(nombreGuia);*/
 
                     }
 
@@ -156,22 +156,12 @@ public class Perfiles_guiasFragment extends Fragment {
             if(pDialog.isShowing())
                 pDialog.dismiss();
 
-            /*guidesAdapter = new ArrayAdapter<Guia>(
-                    getActivity(),
-                    R.layout.list_item_perfiles,
-                    R.id.list_item_perfiles_textview,
-                    guidesList);
-            guidesAdapter.notifyDataSetChanged();*/
 
-            for (int j=0; j<guiasLista.size(); j++){
-                Log.d(" ","guiasLista["+j+"]=" + guiasLista.get(j));
-            }
 
-//            List<String> guias = new ArrayList<>(Arrays.asList(guiasLista));
-//            guidesAdapter.addAll(guiasLista);
-            guidesAdapter.notifyDataSetChanged();
+            g_adapter.notifyDataSetChanged();
 
 
         }
     }
+
 }

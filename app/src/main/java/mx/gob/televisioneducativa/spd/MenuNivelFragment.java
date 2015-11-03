@@ -3,6 +3,7 @@ package mx.gob.televisioneducativa.spd;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class MenuNivelFragment extends Fragment {
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_menu_nivel, container, false);
         Intent intent = getActivity().getIntent();
+        Log.d("INTENT", "intent:" + intent);
         String proceso = "";
         if (intent != null && intent.hasExtra("proceso")){
             proceso = intent.getStringExtra("proceso");
@@ -63,7 +65,10 @@ public class MenuNivelFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Ingreso Docente").
-                                putExtra("infografia", "ingreso_basica_960.jpg"));
+                                putExtra("infografia", "ingreso_basica_960.jpg").
+                                putExtra("funcion", "DOCENTE").
+                                putExtra("proceso","ingreso").
+                                putExtra("nivel","BASICA"));
             }
         });
         root.findViewById(R.id.btn_ingreso_media).setOnClickListener(new View.OnClickListener() {
@@ -73,7 +78,10 @@ public class MenuNivelFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Ingreso Docente").
-                                putExtra("infografia", "ingreso_media_960.jpg"));
+                                putExtra("infografia", "ingreso_media_960.jpg").
+                                putExtra("funcion", "DOCENTE").
+                                putExtra("proceso","ingreso").
+                                putExtra("nivel","MEDIA"));
             }
         });
     }

@@ -3,6 +3,7 @@ package mx.gob.televisioneducativa.spd;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,10 @@ public class InfografiaFragment extends Fragment {
     public InfografiaFragment() {
     }
 
+    String proceso = "";
+    String funcion = "";
+    String nivel = "";
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -25,7 +30,7 @@ public class InfografiaFragment extends Fragment {
         WebView webView = (WebView)root.findViewById(R.id.infografia);
         String titulo = "";
         String infografia = "";
-        Intent intent = getActivity().getIntent();
+        final Intent intent = getActivity().getIntent();
 
         if (intent != null && intent.hasExtra("titulo")){
             titulo = intent.getStringExtra("titulo");
@@ -39,7 +44,15 @@ public class InfografiaFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getActivity(), Perfiles_guias.class));
+                funcion = intent.getStringExtra("funcion");
+                proceso = intent.getStringExtra("proceso");
+                nivel = intent.getStringExtra("nivel");
+                Log.d("NIVEL","nivel:"+nivel);
+                startActivity(new Intent(getActivity(), Perfiles_guias.class)
+                        .putExtra("funcion",""+funcion+"")
+                        .putExtra("proceso",""+proceso+"")
+                        .putExtra("nivel",""+nivel+""));
+
             }
         });
 
