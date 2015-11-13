@@ -32,6 +32,7 @@ public class MenuPromocionBasicaFragment extends Fragment {
                                 putExtra("nivel","BASICA"));
 
 
+
             }
         });
 

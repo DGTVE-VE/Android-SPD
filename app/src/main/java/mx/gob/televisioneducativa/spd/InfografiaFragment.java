@@ -47,7 +47,9 @@ public class InfografiaFragment extends Fragment {
                 funcion = intent.getStringExtra("funcion");
                 proceso = intent.getStringExtra("proceso");
                 nivel = intent.getStringExtra("nivel");
-                Log.d("NIVEL","nivel:"+nivel);
+                Log.d("NIVEL", "nivel:" + nivel);
+
+
                 startActivity(new Intent(getActivity(), Perfiles_guias.class)
                         .putExtra("funcion",""+funcion+"")
                         .putExtra("proceso",""+proceso+"")

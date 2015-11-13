@@ -109,7 +109,7 @@ public class Perfiles_guiasFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... arg0) {
 
-            String url = "http://189.206.254.89/spd/Guias-SPD/api/guias.php?proceso="+proceso+"&funcion="+funcion+"&nivel="+nivel+"";
+            String url = "http://172.16.200.12/spd/Guias-SPD/api/guias.php?proceso="+proceso+"&funcion="+funcion+"&nivel="+nivel+"";
 
             Log.d("URL","url:"+url);
 

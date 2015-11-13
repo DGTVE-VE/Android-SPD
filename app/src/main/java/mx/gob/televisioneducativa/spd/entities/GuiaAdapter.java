@@ -1,5 +1,6 @@
 package mx.gob.televisioneducativa.spd.entities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -28,6 +29,7 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
     public GuiaAdapter(Context context, int textViewResourceId, ArrayList<Guia> guias){
         super(context, textViewResourceId, guias);
         this.guias = guias;
+
     }
 
     /*
@@ -53,8 +55,8 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
 		 * Therefore, i refers to the current Item object.
 		 */
 
-        Guia i = guias.get(position);
-        if(i != null){
+        final Guia guia = guias.get(position);
+        if(guia != null){
             // This is how you obtain a reference to the TextViews.
             // These TextViews are created in the XML files we defined.
 
@@ -67,7 +69,8 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
                 @Override
                 public void onClick(View v) {
                     Log.d("CLICK", "boton guia" + pdf1.getTag());
-                    String urlSpd = "http://189.206.254.89/spd/Guias-SPD/";
+                    //String urlSpd = "http://189.206.254.89/spd/Guias-SPD/";
+                    String urlSpd = "http://evaluaciondocente.sep.gob.mx/";
                     String urlPdf = String.valueOf(pdf1.getTag());
                     String urlPdfPerfil = urlSpd + urlPdf;
                     Log.d("URL", "URL:" + urlPdfPerfil);
@@ -83,7 +86,8 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
                 @Override
                 public void onClick(View v) {
                     Log.d("CLICK","boton perfil" + pdf2.getTag());
-                    String urlSpd = "http://189.206.254.89/spd/Guias-SPD/";
+                    //String urlSpd = "http://189.206.254.89/spd/Guias-SPD/";
+                    String urlSpd = "http://evaluaciondocente.sep.gob.mx/";
                     String urlPdf = String.valueOf(pdf2.getTag());
                     String urlPdfPerfil = urlSpd + urlPdf;
                     Log.d("URL", "URL:" + urlPdfPerfil);
@@ -98,8 +102,13 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
             material.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    getContext().startActivity(new Intent(getContext(), Material.class));
+                    Log.d("CLICK","boton material" + material.getTag());
+                    Intent intent = new Intent(getContext(),Material.class);
+                    Activity activity = (Activity)getContext();
+                    String nivel = activity.getIntent().getStringExtra("nivel");
+                    intent.putExtra("nivel",nivel);
+                    intent.putExtra("guia", guia.getGuiaEstudio());
+                    getContext().startActivity(intent);
                 }
             });
 
@@ -107,13 +116,13 @@ public class GuiaAdapter extends ArrayAdapter<Guia>{
 
             // check to see if each individual textview is null.
             if (nombreGuia != null){
-                nombreGuia.setText(i.getGuiaEstudio());
+                nombreGuia.setText(guia.getGuiaEstudio());
             }
             if (pdf1 != null){
-                pdf1.setTag(i.getPdfGuia());
+                pdf1.setTag(guia.getPdfGuia());
             }
             if(pdf2 != null){
-                pdf2.setTag(i.getPdfPerfil());
+                pdf2.setTag(guia.getPdfPerfil());
             }
         }
 
