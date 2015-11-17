@@ -26,7 +26,13 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo","Promoción Dirección Educación Básica").
-                                putExtra("infografia", "promocion-direccion-eb-web.png"));
+                                putExtra("infografia", "promocion-direccion-eb-web.png").
+                                putExtra("funcion", "DIRECTOR").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
+
+
+
             }
         });
 
@@ -37,7 +43,11 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Subdirección Educación Básica").
-                                putExtra("infografia", "promocion-direccion-eb-web.png"));
+                                putExtra("infografia", "promocion-direccion-eb-web.png").
+                                putExtra("funcion","SUBDIRECTOR").
+                                putExtra("proceso", "PROMOCIÓN").
+                                putExtra("nivel", "BASICA"));
+
             }
         });
 
@@ -48,7 +58,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Coordinador de actividades Educación Básica").
-                                putExtra("infografia", "promocion-direccion-eb-web.png"));
+                                putExtra("infografia", "promocion-direccion-eb-web.png").
+                                putExtra("funcion", "COORDINADOR DE ACTIVIDADES").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
 
@@ -59,7 +72,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Supervisión Educación Básica").
-                                putExtra("infografia", "promocion-supervision-eb-web.png"));
+                                putExtra("infografia", "promocion-supervision-eb-web.png").
+                                putExtra("funcion", "SUPERVISOR").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
 
@@ -70,7 +86,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Jefe de Sector Educación Básica").
-                                putExtra("infografia", "promocion-supervision-eb-web.png"));
+                                putExtra("infografia", "promocion-supervision-eb-web.png").
+                                putExtra("funcion", "JEFE DE SECTOR").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
 
@@ -81,7 +100,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Jefe de Enseñanza Educación Básica").
-                                putExtra("infografia", "promocion-supervision-eb-web.png"));
+                                putExtra("infografia", "promocion-supervision-eb-web.png").
+                                putExtra("funcion", "JEFE DE ENSEÑANZA").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
 
@@ -92,7 +114,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción Inspector General Educación Básica").
-                                putExtra("infografia", "promocion-supervision-eb-web.png"));
+                                putExtra("infografia", "promocion-supervision-eb-web.png").
+                                putExtra("funcion", "INSPECTOR").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
 
@@ -103,7 +128,10 @@ public class MenuPromocionBasicaFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Promoción ATP Educación Básica").
-                                putExtra("infografia", "promocion-atp-eb-web.png"));
+                                putExtra("infografia", "promocion-atp-eb-web.png").
+                                putExtra("funcion","ATP").
+                                putExtra("proceso","PROMOCIÓN").
+                                putExtra("nivel","BASICA"));
             }
         });
         return root;
