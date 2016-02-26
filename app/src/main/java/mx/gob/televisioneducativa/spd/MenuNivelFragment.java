@@ -65,6 +65,7 @@ public class MenuNivelFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Ingreso Docente").
+                                putExtra("educacion", "Ingreso Educación Básica").
                                 putExtra("infografia", "ingreso_basica_960.jpg").
                                 putExtra("funcion", "DOCENTE").
                                 putExtra("proceso","ingreso").
@@ -78,6 +79,7 @@ public class MenuNivelFragment extends Fragment {
                         new Intent(getActivity(),
                                 Infografia.class).
                                 putExtra("titulo", "Ingreso Docente").
+                                putExtra("educacion", "Ingreso Educación Media").
                                 putExtra("infografia", "ingreso_media_960.jpg").
                                 putExtra("funcion", "DOCENTE").
                                 putExtra("proceso","ingreso").
