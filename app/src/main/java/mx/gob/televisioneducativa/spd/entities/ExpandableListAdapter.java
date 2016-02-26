@@ -2,6 +2,7 @@ package mx.gob.televisioneducativa.spd.entities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.util.Log;
@@ -31,6 +32,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         this._listDataChild = listChildData;
     }
 
+
     @Override
     public Object getChild(int groupPosition, int childPosititon) {
         return this._listDataChild.get(this._listDataHeader.get(groupPosition))
@@ -57,22 +59,29 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView txtListChild = (TextView) convertView
                 .findViewById(R.id.expandable_item);
 
+        txtListChild.setTextSize(14);
         txtListChild.setText(childText.getBibliografia());
-        txtListChild.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(_context, childText.getUrlNivel().toString(), Toast.LENGTH_LONG).show();
-                Log.d("CLICKPDF", "->" + childText.getUrlNivel().toString());
-                String urlSpd = "http://evaluaciondocente.sep.gob.mx/";
-                String urlPdf = childText.getUrlNivel().toString();
-                String urPdfComp = urlSpd + urlPdf;
-                String urlConv = String.valueOf(Uri.parse(urPdfComp));
-                Log.d("COMPLETA","->"+urPdfComp);
-                Log.d("URLPARSE","->"+urlConv);
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urPdfComp));
-                _context.startActivity(browserIntent);
+        if(childText.getUrlMaterial() != null){
+            if ( ! childText.getUrlMaterial().trim().isEmpty()) {
+                txtListChild.setTextColor(Color.BLUE);
+                txtListChild.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(_context, childText.getUrlMaterial().toString(), Toast.LENGTH_LONG).show();
+                        Log.d("CLICKPDF", "->" + childText.getUrlMaterial().toString());
+                        String urlSpd = "http://evaluaciondocente.sep.gob.mx/";
+                        String urlPdf = childText.getUrlMaterial().toString();
+                        String urPdfComp = urlSpd + urlPdf;
+                        String urlConv = String.valueOf(Uri.parse(urPdfComp));
+                        Log.d("COMPLETA", "->" + urPdfComp);
+                        Log.d("URLPARSE", "->" + urlConv);
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(urPdfComp));
+                        _context.startActivity(browserIntent);
+                    }
+                });
             }
-        });
+        }
+
         return convertView;
     }
 
@@ -110,6 +119,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView lblListHeader = (TextView) convertView
                 .findViewById(R.id.material_group);
         lblListHeader.setTypeface(null, Typeface.BOLD);
+        lblListHeader.setTextSize(20);
         lblListHeader.setText(headerTitle);
 
         return convertView;

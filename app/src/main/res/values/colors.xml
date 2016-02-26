@@ -6,6 +6,7 @@
     <color name="orange">#ffda69</color>
     <color name="black">#000000</color>
     <color name="green">#66CD00</color>
+    <color name="blue">#0000FF</color>
 
     <color name="fondo_direccion_basica">#ffffff</color>
     <color name="fondo_supervision_basica">#ffffff</color>

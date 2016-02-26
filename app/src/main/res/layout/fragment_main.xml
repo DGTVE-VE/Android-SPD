@@ -53,16 +53,7 @@
             android:text="Promoción"
             android:textColor="@color/white" />
 
-        <Button
-            android:id="@+id/btn_promocion_funcion"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_margin="1dp"
-            android:layout_weight="2"
-            android:background="@color/red"
-            android:text="Promoción en la función"
-            android:textColor="@color/white" />
-        />
+
     </LinearLayout>
 
     <ScrollView

@@ -7,13 +7,13 @@ public class MaterialObject {
     private String guiaEstudio;
     private String dimension;
     private String bibliografia;
-    private String urlNivel;
+    private String urlMaterial;
 
-    public MaterialObject(String guiaEstudio, String dimension,String bibliografia, String urlNivel){
+    public MaterialObject(String guiaEstudio, String dimension,String bibliografia, String urlMaterial){
         this.setGuiaEstudio(guiaEstudio);
         this.setDimension(dimension);
         this.setBibliografia(bibliografia);
-        this.setUrlNivel(urlNivel);
+        this.setUrlMaterial(urlMaterial);
     }
 
     public String getGuiaEstudio() {
@@ -34,12 +34,12 @@ public class MaterialObject {
 
 
 
-    public String getUrlNivel() {
-        return urlNivel;
+    public String getUrlMaterial() {
+        return urlMaterial;
     }
 
-    public void setUrlNivel(String urlNivel) {
-        this.urlNivel = urlNivel;
+    public void setUrlMaterial(String urlMaterial) {
+        this.urlMaterial = urlMaterial;
     }
 
     public String getBibliografia() {

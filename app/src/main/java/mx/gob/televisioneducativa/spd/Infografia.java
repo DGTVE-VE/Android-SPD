@@ -1,5 +1,6 @@
 package mx.gob.televisioneducativa.spd;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 public class Infografia extends MenuBar {
@@ -8,6 +9,12 @@ public class Infografia extends MenuBar {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_infografia);
+        String nivel = "";
+        Intent intent = getIntent();
+        if(intent != null && intent.hasExtra("educacion")){
+            nivel = intent.getStringExtra("educacion");
+        }
+        setTitle(nivel);
     }
 
 

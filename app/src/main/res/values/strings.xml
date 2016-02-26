@@ -22,13 +22,19 @@
         mejorar su desempeño en las evaluaciones docentes y en la práctica educativa cotidiana.
     </string>
     <string name="title_activity_menu_ingreso">MenuIngreso</string>
-    <string name="title_activity_ingreso_basica">IngresoBasica</string>
-    <string name="title_activity_menu_promocion_basica">MenuPromocionBasica</string>
-    <string name="title_activity_menu_promocion_media">MenuPromocionMedia</string>
+    <string name="title_activity_ingreso_basica">Ingreso Educación Basica</string>
+    <string name="title_activity_ingreso_media">Ingreso Educación Media</string>
+    <string name="title_activity_menu_promocion_basica">Menú Promoción Básica</string>
+    <string name="title_activity_menu_promocion_media">Menú Promoción Media</string>
     <string name="title_activity_estrategias_estudio">Estrategias de Estudio</string>
-    <string name="title_activity_menu_bar">MenuBar</string>
+    <string name="title_activity_menu_bar">Menú Bar</string>
     <string name="title_activity_faq">Preguntas Frecuentes</string>
     <string name="title_activity_contacto">Contacto</string>
-    <string name="title_activity_perfiles_guias">Perfiles_guias</string>
-    <string name="title_activity_material">material</string>
+    <string name="title_activity_perfiles_guias">Perfiles,guias y bibliografía</string>
+    <string name="title_activity_material">Material</string>
+    <string name="dimension1">Dimensión 1</string>
+    <string name="dimension2">Dimensión 2</string>
+    <string name="dimension3">Dimensión 3</string>
+    <string name="dimension4">Dimensión 4</string>
+    <string name="dimension5">Dimensión 5</string>
 </resources>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import mx.gob.televisioneducativa.spd.R;
-import mx.gob.televisioneducativa.spd.serviceHandler;
+import mx.gob.televisioneducativa.spd.ServiceHandler;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -37,6 +38,7 @@ public class MaterialFragment extends Fragment {
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String,List<MaterialObject>> listDataChild;
+    TextView itemList;
 
 
     @Override
@@ -52,11 +54,18 @@ public class MaterialFragment extends Fragment {
         listDataChild = new HashMap<String, List<MaterialObject>>();
 
         //Adding header data
-        listDataHeader.add("Dimension 1");
-        listDataHeader.add("Dimension 2");
-        listDataHeader.add("Dimension 3");
-        listDataHeader.add("Dimension 4");
-        listDataHeader.add("Dimension 5");
+
+        String dim1 = getResources().getString(R.string.dimension1);
+        String dim2 = getResources().getString(R.string.dimension2);
+        String dim3 = getResources().getString(R.string.dimension3);
+        String dim4 = getResources().getString(R.string.dimension4);
+        String dim5 = getResources().getString(R.string.dimension5);
+
+        listDataHeader.add(""+dim1+"");
+        listDataHeader.add(""+dim2+"");
+        listDataHeader.add(""+dim3+"");
+        listDataHeader.add(""+dim4+"");
+        listDataHeader.add(""+dim5+"");
 
 
         new GetBibliografias().execute();
@@ -94,11 +103,11 @@ public class MaterialFragment extends Fragment {
         @Override
         protected Void doInBackground(Void... arg0){
 
-            listDataChild.put(listDataHeader.get(0),llenaDimension("1"));
+            listDataChild.put(listDataHeader.get(0), llenaDimension("1"));
             listDataChild.put(listDataHeader.get(1),llenaDimension("2"));
-            listDataChild.put(listDataHeader.get(2),llenaDimension("3"));
-            listDataChild.put(listDataHeader.get(3),llenaDimension("4"));
-            listDataChild.put(listDataHeader.get(4),llenaDimension("5"));
+            listDataChild.put(listDataHeader.get(2), llenaDimension("3"));
+            listDataChild.put(listDataHeader.get(3), llenaDimension("4"));
+            listDataChild.put(listDataHeader.get(4), llenaDimension("5"));
 
             return null;
         }
@@ -122,11 +131,11 @@ public class MaterialFragment extends Fragment {
             Log.d("URL","->"+url);
             List<MaterialObject> nombres = new ArrayList<>();
             //creating service handler class instance
-            serviceHandler sh = new serviceHandler();
+            ServiceHandler sh = new ServiceHandler();
 
             //making a request to url and getting response
 
-            String jsonStr = sh.makeServiceCall(url, serviceHandler.GET);
+            String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
 
             if(jsonStr != null){
                 try {
@@ -140,6 +149,8 @@ public class MaterialFragment extends Fragment {
                                 m.getString(TAG_DIMENSION),
                                 m.getString(TAG_BIBLIOGRAFIA),
                                 m.getString(TAG_URLMATERIAL));
+                        Log.d("URL = ",m.getString(TAG_URLMATERIAL));
+
                         nombres.add(material);
                     }
 

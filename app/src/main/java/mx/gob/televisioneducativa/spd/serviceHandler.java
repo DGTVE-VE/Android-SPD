@@ -18,13 +18,13 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-public class serviceHandler {
+public class ServiceHandler {
 
     static String response = null;
     public final static int GET = 1;
     public final static int POST = 2;
 
-    public serviceHandler() {
+    public ServiceHandler() {
 
     }
 

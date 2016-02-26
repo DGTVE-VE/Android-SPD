@@ -16,6 +16,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import mx.gob.televisioneducativa.spd.entities.Guia;
@@ -108,16 +110,27 @@ public class Perfiles_guiasFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... arg0) {
+            try {
 
-            String url = "http://172.16.200.12/spd/Guias-SPD/api/guias.php?proceso="+proceso+"&funcion="+funcion+"&nivel="+nivel+"";
+                proceso = URLEncoder.encode(proceso, "UTF-8");
+                funcion = URLEncoder.encode(funcion, "UTF-8");
+                nivel = URLEncoder.encode(nivel,"UTF-8");
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+
+            Log.d("FUNCION","->"+funcion);
+
+            String url = "http://ventana.televisioneducativa.gob.mx/spd/Guias-SPD/api/guias.php?proceso="+proceso+"&funcion="+funcion+"&nivel="+nivel+"";
 
             Log.d("URL","url:"+url);
 
             //Creating service handler class instance
-            serviceHandler sh = new serviceHandler();
+            ServiceHandler sh = new ServiceHandler();
 
             //Making a request to url and getting response
-            String jsonStr = sh.makeServiceCall(url, serviceHandler.GET);
+            String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
             Log.d("Response: ", "> " + jsonStr);
 
             if (jsonStr != null) {
